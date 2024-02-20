@@ -1,0 +1,62 @@
+<body>
+  <!-- <div class="head">
+  <h1>Upload CSV or Excel file</h1>
+</div> -->
+  <div class="row text-center" style="width
+  :100vw" >
+    <div class="col-md-6 test">
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1 class="title">Sales</h1>
+      <!-- <br> -->
+      <h1 class="title">Forecasting</h1>
+      <!-- <br> -->
+      <!-- <br>
+      <h1 class="title">of your data</h1> -->
+    </div>
+    <div class="col-md-6">
+
+      <div class="form-box">
+        <form>
+          <div>
+            <input id="file-upload" class="form-control" type="file" accept=".csv,.xlsx,.xls" placeholder="Choose a file">
+          </div>
+          <br>
+          <br>
+
+          <div class="dropdown">
+            <!-- <label for="periodicity" title="Select periodicity"><strong>Type</strong></label> -->
+            <select (change)="onPeriodicityChange($event)" id="periodicity" class="form-select mb-3">
+              <option class="dropdown-item" value="" selected disabled hidden>Type</option>
+              <option class="dropdown-item" value="Daily">Daily</option>
+              <option class="dropdown-item" value="Weekly">Weekly</option>
+              <option class="dropdown-item" value="Monthly">Monthly</option>
+              <option class="dropdown-item" value="Yearly">Yearly</option>
+            </select>
+          </div>
+
+          <br>
+          <br>
+          <div class="dropdown">
+            <!-- <label for="numerix"><strong>Enter the count</strong></label> -->
+            <select (change)="onNumerixChange($event)" id="numerix" class="form-select mb-3">
+              <option value="" selected disabled hidden>Count</option>
+              <option *ngFor="let num of numerixOptions" [value]="num">{{num}}</option>
+            </select>
+          </div>
+          <br>
+          <br>
+          <button class="btn btn-primary" type="submit" (click)="uploadFile()">Submit</button>
+        </form>
+      </div>
+
+      <div *ngIf="uploadSuccessful">
+        <h1>File uploaded successfully!</h1>
+      </div>
+      <p class="warning" *ngIf="showWarning">Please select a valid CSV or Excel file.</p>
+    </div>
+  </div>
+
+</body>

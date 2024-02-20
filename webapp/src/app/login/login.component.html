@@ -1,0 +1,29 @@
+<body class="main-body">
+  <div class="row text-center" style="width:100vw">
+    <div class="col-md-6 test">
+      <br>
+      <h1 class="title">Sales</h1>
+      <!-- <br> -->
+      <h1 class="title">Forecasting</h1>
+      <!-- <h1 class="title">Power of Data</h1> -->
+    </div>
+    <div class="col-md-6">
+      <div class="form-box">
+        <form (ngSubmit)="login()">
+          <div class="mb-3">
+            <!-- <label for="username" class="form-label">Username</label> -->
+            <input type="email" class="form-control" id="username" name="username" placeholder="username" [(ngModel)]="username" required>
+          </div>
+          <br>
+          <div class="mb-3">
+            <!-- <label for="password" class="form-label">Password</label> -->
+            <input type="password" class="form-control" id="password" name="password" placeholder="password" [(ngModel)]="password" required>
+          </div>
+          <br>  
+          <button type="submit" class="btn btn-primaryy">Login</button>
+          <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
